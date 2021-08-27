@@ -3,7 +3,7 @@
     Created on : 27 авг. 2021 г., 15:14:38
     Author     : sartv
 --%>
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,10 +13,21 @@
     </head>
     <body>
         <h1>Dear, employee! Inter yor details, please!</h1>
-        <form action="showdetails" method="get">
+<!--        <form action="showdetails" method="get">
             <input type="text" name="empoyeeName" placeholder="Write your name">
             <input type="submit">
-            
-        </form>
+        </form>-->
+
+    <form:form action="showdetails" modelAttribute="employee">
+        
+        Name<form:input path="name"/>
+        <br><br>
+        Surname<form:input path="surname"/>
+        <br><br>
+        Salary<form:input path="salary"/>
+        <br><br>
+        <input type="submit" value="ok">
+        
+    </form:form>
     </body>
 </html>

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : askdetails
-    Created on : 27 авг. 2021 г., 15:14:38
-    Author     : sartv
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,7 +7,8 @@
         <title>Ask details</title>
     </head>
     <body>
-        <h1>Dear, ${nameAtribute}, your welcome!</h1>
+        <h1>Dear, ${employee.name} ${employee.surname}, your welcome!</h1>
+        <h2>Now your salary is ${employee.salary}! Work hard!</h2>
         </form>
     </body>
 </html>
