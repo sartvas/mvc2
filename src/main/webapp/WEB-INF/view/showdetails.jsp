@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,13 @@
             ${employee.department}!</h1>
         <h2>Now your salary is ${employee.salary}!</h2>
         <h2>Good choice, your car is ${employee.carBrand}! Work hard!</h2>
+        <h2>Now we will speak with you on:
+            <ul>
+                <c:forEach var="langs" items="${employee.langs}">
+                    <li>${langs}</li>
+                </c:forEach>
+            </ul>
+            
         </form>
     </body>
 </html>

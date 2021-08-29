@@ -13,6 +13,8 @@ public class Employee {
     private String department;
     private String carBrand;
     private Map<String, String> carBrands;
+    private String[] langs;
+    private Map<String, String> lang;
 
 
     public Employee(){
@@ -20,7 +22,13 @@ public class Employee {
     carBrands.put("BMW", "BMW");
     carBrands.put("Audi", "Audi");
     carBrands.put("Mercedes", "Mercedes");
-            };
+    
+    lang = new HashMap<>();
+    lang.put("EN", "English");
+    lang.put("DE", "Deutch");
+    lang.put("FR", "France");
+    
+    };
 
     public String getName() {
         return name;
@@ -68,6 +76,22 @@ public class Employee {
 
     public void setCarBrands(Map<String, String> carBrands) {
         this.carBrands = carBrands;
+    }
+
+    public String[] getLangs() {
+        return langs;
+    }
+
+    public void setLangs(String[] langs) {
+        this.langs = langs;
+    }
+
+    public Map<String, String> getLang() {
+        return lang;
+    }
+
+    public void setLang(Map<String, String> lang) {
+        this.lang = lang;
     }
     
    
