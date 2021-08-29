@@ -26,11 +26,15 @@
         <br><br>
         Salary<form:input path="salary"/>
         <br><br>
-        Department<form:select path="department">
+        Department
+        <form:select path="department">
         <form:option value="IT" lable="IT"/>
         <form:option value="HR" lable="HR"/>      
-        <form:option value="Sales" lable="Sales"/>        
+        <form:option value="Sales" lable="HR"/> 
         </form:select>
+        <br><br>
+        Which cars do you want?
+        <form:radiobuttons path="carBrand" items="${employee.carBrands}"/>
         <br><br>
         <input type="submit" value="ok">
         

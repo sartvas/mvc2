@@ -1,6 +1,9 @@
 
 package com.sartvas.spring.mvc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Employee {
     
@@ -8,8 +11,16 @@ public class Employee {
     private String surname;
     private int salary;
     private String department;
+    private String carBrand;
+    private Map<String, String> carBrands;
 
-    public Employee(){};
+
+    public Employee(){
+    carBrands = new HashMap<>();
+    carBrands.put("BMW", "BMW");
+    carBrands.put("Audi", "Audi");
+    carBrands.put("Mercedes", "Mercedes");
+            };
 
     public String getName() {
         return name;
@@ -42,6 +53,24 @@ public class Employee {
     public void setDepartment(String department) {
         this.department = department;
     }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public Map<String, String> getCarBrands() {
+        return carBrands;
+    }
+
+    public void setCarBrands(Map<String, String> carBrands) {
+        this.carBrands = carBrands;
+    }
+    
+   
 
     @Override
     public String toString() {

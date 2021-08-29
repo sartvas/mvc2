@@ -9,7 +9,8 @@
     <body>
         <h1>Dear, ${employee.name} ${employee.surname}, your welcome in department 
             ${employee.department}!</h1>
-        <h2>Now your salary is ${employee.salary}! Work hard!</h2>
+        <h2>Now your salary is ${employee.salary}!</h2>
+        <h2>Good choice, your car is ${employee.carBrand}! Work hard!</h2>
         </form>
     </body>
 </html>
