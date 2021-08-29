@@ -7,7 +7,8 @@
         <title>Ask details</title>
     </head>
     <body>
-        <h1>Dear, ${employee.name} ${employee.surname}, your welcome!</h1>
+        <h1>Dear, ${employee.name} ${employee.surname}, your welcome in department 
+            ${employee.department}!</h1>
         <h2>Now your salary is ${employee.salary}! Work hard!</h2>
         </form>
     </body>
