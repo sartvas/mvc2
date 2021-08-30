@@ -1,13 +1,13 @@
 
 package com.sartvas.spring.mvc;
 
+import com.sartvas.spring.mvc.valid.CheckEmail;
 import java.util.HashMap;
 import java.util.Map;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import org.springframework.lang.NonNull;
+import javax.validation.constraints.*;
+import javax.validation.constraints.Min;
+
+
 
 
 
@@ -18,12 +18,19 @@ public class Employee {
 //    @NotEmpty(message = "This field is required!")
     @NotBlank(message = "Please, insert correct name")
     private String surname;
+    @Min(value = 100, message = "Salary must be greater 99$")
+    @Max(value = 29999, message = "Salary not must be greater 29999$")
     private int salary;
     private String department;
     private String carBrand;
     private Map<String, String> carBrands;
     private String[] langs;
     private Map<String, String> lang;
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Telephone number must be format: XXX-XX-XX")
+    private String phoneNumber;
+    
+    @CheckEmail
+    private String email;
 
 
     public Employee(){
@@ -102,9 +109,25 @@ public class Employee {
     public void setLang(Map<String, String> lang) {
         this.lang = lang;
     }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
    
-
+    
     @Override
     public String toString() {
         return "Employee{" + "name=" + name + ", surname=" + surname + ", salary=" + salary + ", department=" + department + '}';

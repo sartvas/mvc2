@@ -18,7 +18,8 @@
                     <li>${langs}</li>
                 </c:forEach>
             </ul>
-            
+            <h2>Waiting for instructions. Your Teamlead will call on ${employee.phoneNumber}</h2>
+            <h2>Documents for NDA allready sent on your email ${employee.email}</h2>
         </form>
     </body>
 </html>
