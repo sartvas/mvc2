@@ -1,8 +1,10 @@
 
 package com.sartvas.spring.mvc;
 
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,10 +26,16 @@ public class EmployeeController {
     }
     
     @RequestMapping("/showdetails")
-    public String showAskDetails(@ModelAttribute("employee") Employee emp){
-//        empName = "Mr. " + empName;
-//        model.addAttribute("nameAtribute", empName);
+    public String showAskDetails(@Valid @ModelAttribute("employee") Employee emp
+            , BindingResult bindingResult){
+        
+        if(bindingResult.hasErrors()){
+            return "askdetails";
+        }
+        else {
         return "showdetails";
+        }
+        
     }
     
     //RequestMapping

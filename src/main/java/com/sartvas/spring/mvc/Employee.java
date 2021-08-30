@@ -3,11 +3,20 @@ package com.sartvas.spring.mvc;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.springframework.lang.NonNull;
+
 
 
 public class Employee {
     
+    @Size(min = 2, message = "Please, insert correct name")
     private String name;
+//    @NotEmpty(message = "This field is required!")
+    @NotBlank(message = "Please, insert correct name")
     private String surname;
     private int salary;
     private String department;
